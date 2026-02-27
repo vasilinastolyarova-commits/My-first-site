@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English with Joy | Репетитор английского</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFD166; /* Яркий желтый */
+            --secondary: #06D6A0; /* Сочный мятный */
+            --accent: #EF476F; /* Коралловый розовый */
+            --dark: #118AB2; /* Глубокий синий */
+            --light: #FFFFFF;
+            --text: #2D3436;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #fdfdfd;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .cta-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(239, 71, 111, 0.3);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #fff 50%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+            display: block;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        /* Decorative blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.6;
+            z-index: 1;
+        }
+        .blob-1 { top: -10%; left: -10%; width: 400px; height: 400px; background: var(--accent); }
+        .blob-2 { bottom: -10%; right: -10%; width: 500px; height: 500px; background: var(--dark); }
+
+        /* --- About Section --- */
+        .section {
+            padding: 100px 10%;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 400px;
+            background-color: var(--secondary);
+            border-radius: 20px;
+            background-image: url('https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 20px 20px 0px var(--primary);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .features {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent);
+        }
+
+        .feature-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        /* --- Services --- */
+        .services {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            transition: transform 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .price {
+            display: inline-block;
+            background: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+
+        /* --- Contact --- */
+        .contact {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            font-family: inherit;
+        }
+
+        button[type="submit"] {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background: #d63d60;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0c6d8d;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about { grid-template-columns: 1fr; }
+            .about-img { height: 300px; margin-bottom: 20px; box-shadow: 10px 10px 0px var(--primary); }
+            nav { display: none; } /* Simplified for demo */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">English<span>Joy</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Уроки</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="cta-btn">Записаться</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="hero-content">
+            <h1>Английский, который <span>вдохновляет</span></h1>
+            <p>Забудьте о скучных учебниках. Говорите свободно, уверенно и с удовольствием уже через 3 месяца занятий.</p>
+            <a href="#contact" class="cta-btn" style="padding: 15px 40px; font-size: 1.1rem;">Первый урок бесплатно</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about">
+            <div class="about-img"></div>
+            <div class="about-text">
+                <h2>Привет, я Анна!</h2>
+                <p>Я не просто учу грамматике. Я помогаю сломать языковой барьер. Моя методика основана на погружении в контекст, современных сериалах и живом общении.</p>
+                
+                <div class="features">
+                    <div class="feature-item">
+                        <strong>🎓 5 лет опыта</strong>
+                        <span>Сертификат CELTA</span>
+                    </div>
+                    <div class="feature-item">
+                        <strong>🚀 Результат</strong>
+                        <span>Уверенный B1 за 4 месяца</span>
+                    </div>
+                    <div class="feature-item">
+                        <strong>💻 Онлайн</strong>
+                        <span>Удобная платформа</span>
+                    </div>
+                    <div class="feature-item">
+                        <strong>❤️ Индивидуально</strong>
+                        <span>Программа под вас</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <h2>Чем я могу помочь?</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🗣️</div>
+                <h3>Разговорный клуб</h3>
+                <p>Обсуждаем новости, фильмы и жизнь. Идеально для тех, кто все понимает, но боится сказать слово.</p>
+                <div class="price">1500₽ / час</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Подготовка к IELTS</h3>
+                <p>Стратегии, лайфхаки и практика. Доведу до заветной 7.0+ баллов.</p>
+                <div class="price">2000₽ / час</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">💼</div>
+                <h3>Business English</h3>
+                <p>Для работы и карьеры. Переписка, переговоры и презентации на профессиональном уровне.</p>
+                <div class="price">1800₽ / час</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <h2>Готовы начать?</h2>
+        <p>Оставьте заявку на бесплатный пробный урок (20 минут), чтобы определить ваш уровень.</p>
+        
+        <form class="contact-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="email" placeholder="Ваш Email" required>
+            <input type="tel" placeholder="Телефон / Telegram">
+            <textarea rows="4" placeholder="Какая у вас цель?"></textarea>
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 EnglishJoy. Все права защищены. Сделано с любовью к языкам.</p>
+    </footer>
+
+</body>
+</html>
